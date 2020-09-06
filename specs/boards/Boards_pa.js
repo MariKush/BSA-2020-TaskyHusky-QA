@@ -39,11 +39,25 @@ class BoardsActions{
 
     isNewlyCreatedBoardDisplayed(){
         page.boardNameLink.waitForDisplayed(2000);
-        page.boardNameLink.waitForClickable(2000);
-        return true;
+        return page.boardNameLink.isDisplayed();
     }
 
+    deleteBoard(){
+        page.threeDotsButton.click();
 
+        page.deleteItem.waitForDisplayed(2000);
+        page.deleteItem.waitForClickable(2000);
+        page.deleteItem.click();
+
+        page.deleteButton.waitForClickable(2000);
+        page.deleteButton.click();
+
+        browser.pause(1000);
+    }
+
+    isNewlyCreatedBoardDeleted(){
+        return !page.boardNameLink.isExisting();
+    }
 
 }
 

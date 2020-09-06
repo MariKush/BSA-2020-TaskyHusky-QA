@@ -14,10 +14,11 @@ class BoardsPage{
     get createButton () { return $('button=Create a board')};
 
     get boardNameLink () { return $('a=' + data.boardName + '')};
+    get threeDotsButton () { return $$('span.dropdown')[2]};
 
-
-
-
+    get deleteItem () { return $('span=Delete')};
+    get deleteButton () { return $('button=Delete')}
+    
 }
 
 module.exports = BoardsPage;

@@ -38,4 +38,13 @@ describe('Boards test suite', () => {
         boardsActions.openViewAllBoardsPage();
         assert.strictEqual(boardsActions.isNewlyCreatedBoardDisplayed(), true);
     });
+
+
+    it('Delete board', () =>{
+        boardsActions.openViewAllBoardsPage();
+        boardsActions.deleteBoard();
+        boardsActions.openViewAllBoardsPage();
+        assert.strictEqual(boardsActions.isNewlyCreatedBoardDeleted(), true);
+    });
+
 });
