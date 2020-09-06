@@ -1,9 +1,9 @@
 {
     "email":"test@test.com",
     "password":"123456",
-    "invalidEmail":"kakagod168@@ascaz.net",
-    "newListName":"FavouritePlaces",
-    "listName":"BestFood",
+    "url":"https://stage.taskyhusky.xyz/login",
+    "newFilterName":"Issues contains word: 'bug'",
+    "containsWord":"bug",
     "notificationText":"Filter was saved",
     "notificationTitleText":"Success",
     "favoriteText":"1 person"

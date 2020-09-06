@@ -6,11 +6,18 @@ const data = require('./data.json');
 const menuSteps = new MenuActions();
 const pageSteps = new SettingsActions();
 
-describe('Your Playground test suite', () => {
+function Login() {
+    pageSteps.enterEmail(data.email);
+    pageSteps.clickContinueButton();
+    pageSteps.enterPassword(data.password);
+    pageSteps.clickLoginButton(); 
+};
+
+describe('Filters test suite', () => {
 
     beforeEach(() => {
         browser.maximizeWindow();
-        browser.url('https://stage.taskyhusky.xyz/login')
+        browser.url(data.url)
     });
 
     afterEach(() => {
@@ -20,23 +27,20 @@ describe('Your Playground test suite', () => {
     
     it('Create and add to favorite filter', () => { 
 
-        pageSteps.enterEmail(data.email);
-        pageSteps.clickContinueButton();
-        pageSteps.enterPassword(data.password);
-        pageSteps.clickLoginButton();
+        Login();
 
         menuSteps.navigateToAdvancedSearch();
-        pageSteps.enterContainsSearch("bug");
+        pageSteps.enterContainsSearch(data.containsWord);
         pageSteps.clickSearchButton();
         pageSteps.clickSaveAsButton();
-        pageSteps.enterNewFilterName("Issues contains word: 'bug'");
+        pageSteps.enterNewFilterName(data.newFilterName);
         pageSteps.clickSubmitFilterName();
 
         assert.strictEqual(pageSteps.getNotificationText(), data.notificationText);
         assert.strictEqual(pageSteps.getNotificationTitleText(), data.notificationTitleText);
         
         menuSteps.navigateToViewAllFilters();
-        pageSteps.findCreatedFilter("Issues contains word: 'bug'");
+        pageSteps.findCreatedFilter(data.newFilterName);
         pageSteps.clickOnStar();
 
         assert.strictEqual(pageSteps.getFavoriteText(), data.favoriteText);
@@ -46,8 +50,6 @@ describe('Your Playground test suite', () => {
         pageSteps.submitDelete();
 
         menuSteps.navigateToLogOut();
-        browser.pause(5000);
-
     });
 
 });

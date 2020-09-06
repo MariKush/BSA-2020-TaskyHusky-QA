@@ -3,6 +3,7 @@ const SettingsPage = require('./Filters_PO');
 const page = new SettingsPage();
 
 class SettingsActions {
+    
     enterEmail(value) {
         page.emailInput.waitForDisplayed(2000);
         page.emailInput.clearValue();
