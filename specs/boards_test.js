@@ -35,6 +35,7 @@ describe('Boards test suite', () => {
     it('Create Scrum board', () =>{
         boardsActions.openCreateBoardForm();
         boardsActions.fillAndSendCreateBoardForm(data.boardName);
+        boardsActions.openViewAllBoardsPage();
         assert.strictEqual(boardsActions.isNewlyCreatedBoardDisplayed(), true);
     });
 });

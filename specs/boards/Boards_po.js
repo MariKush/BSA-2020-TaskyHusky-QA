@@ -4,6 +4,7 @@ class BoardsPage{
 
     get boardsItem () { return $('div=Boards')};
     get createBoardItem () { return $('div=Create board')};
+    get viewAllBoardsItem () { return $('a[href="/boards"]')};
 
     get createScrumBoardButton () { return $('button=Create a SCRUM board')};
 

@@ -29,8 +29,17 @@ class BoardsActions{
         page.createButton.click();
     }
 
+    openViewAllBoardsPage(){
+        page.boardsItem.waitForDisplayed(2000);
+        page.boardsItem.click();
+        page.viewAllBoardsItem.waitForDisplayed(2000);
+        page.viewAllBoardsItem.waitForClickable(2000);
+        page.viewAllBoardsItem.click();
+    }
+
     isNewlyCreatedBoardDisplayed(){
-        page.boardNameLink.waitForDisplayed();
+        page.boardNameLink.waitForDisplayed(2000);
+        page.boardNameLink.waitForClickable(2000);
         return true;
     }
 
