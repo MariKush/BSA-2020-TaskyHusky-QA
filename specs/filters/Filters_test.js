@@ -6,7 +6,7 @@ const data = require('./data.json');
 const menuSteps = new MenuActions();
 const pageSteps = new SettingsActions();
 
-function Login() {
+function login() {
     pageSteps.enterEmail(data.email);
     pageSteps.clickContinueButton();
     pageSteps.enterPassword(data.password);
@@ -27,7 +27,7 @@ describe('Filters test suite', () => {
     
     it('Create and add to favorite filter', () => { 
 
-        Login();
+        login();
 
         menuSteps.navigateToAdvancedSearch();
         pageSteps.enterContainsSearch(data.containsWord);
