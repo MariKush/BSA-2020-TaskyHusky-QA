@@ -1,37 +1,45 @@
-const SettingsActions = require('./Filters_PA');
-const MenuActions = require('./Filters_MenuPA');
+const PageActions = require('./filters/Filters_PA');
+const MenuActions = require('./filters/Filters_MenuPA');
+const LogInActions = require('./login/LogIn_pa');
 const assert = require('assert');
-const data = require('./data.json');
+const data = require('./testData.json');
 
 const menuSteps = new MenuActions();
-const pageSteps = new SettingsActions();
+const pageSteps = new PageActions();
+const logInActions = new LogInActions();
 
-function login() {
-    pageSteps.enterEmail(data.email);
-    pageSteps.clickContinueButton();
-    pageSteps.enterPassword(data.password);
-    pageSteps.clickLoginButton(); 
-};
 
 describe('Filters test suite', () => {
 
+    before(()=>{
+        browser.maximizeWindow();
+        browser.url(data.logInUrl);
+    });
+
     beforeEach(() => {
         browser.maximizeWindow();
-        browser.url(data.url)
+        userLogin(data.email, data.password);
     });
 
     afterEach(() => {
         browser.reloadSession();
     });
 
+    function userLogin(email, password){
+
+        logInActions.enterEmail(email);
+        logInActions.clickContinueButton();
+        logInActions.enterPassword(password);
+        logInActions.clickLogInButton();
+    
+    };
     
     it('Create and add to favorite filter', () => { 
-
-        login();
 
         menuSteps.navigateToAdvancedSearch();
         pageSteps.enterContainsSearch(data.containsWord);
         pageSteps.clickSearchButton();
+        pageSteps.clickThreeDots();
         pageSteps.clickSaveAsButton();
         pageSteps.enterNewFilterName(data.newFilterName);
         pageSteps.clickSubmitFilterName();
@@ -49,7 +57,11 @@ describe('Filters test suite', () => {
         pageSteps.clickDeleteFilter();
         pageSteps.submitDelete();
 
+        browser.pause(3000);
+        
         menuSteps.navigateToLogOut();
+
+        browser.pause(3000);
     });
 
 });

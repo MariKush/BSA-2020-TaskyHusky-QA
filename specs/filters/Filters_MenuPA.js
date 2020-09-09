@@ -1,5 +1,5 @@
-const MenuPage = require('./Filters_MenuPO');
-const menu = new MenuPage();
+const Menu = require('./Filters_MenuPO');
+const menu = new Menu();
 
 class MenuActions {
 

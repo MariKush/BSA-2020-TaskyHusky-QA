@@ -32,7 +32,7 @@ describe('Boards test suite', () => {
     });
 
 
-    it('Create Scrum board', () =>{
+    xit('Create Scrum board', () =>{
         boardsActions.openCreateBoardForm();
         boardsActions.fillAndSendCreateBoardForm(data.boardName);
         boardsActions.openViewAllBoardsPage();
@@ -40,7 +40,7 @@ describe('Boards test suite', () => {
     });
 
 
-    it('Delete board', () =>{
+    xit('Delete board', () =>{
         boardsActions.openViewAllBoardsPage();
         boardsActions.deleteBoard();
         boardsActions.openViewAllBoardsPage();

@@ -1,4 +1,4 @@
-class MenuPage {
+class Menu {
     get filters () {return $('div=Filters')};
     get advancedSearch () {return $('a[href="/advancedSearch"]')};
     get viewAllFiltres () {return $('a[href="/filters"]')};
@@ -6,4 +6,4 @@ class MenuPage {
     get logoutButton () {return $('div=Log out')};
 };
 
-module.exports = MenuPage;
+module.exports = Menu;

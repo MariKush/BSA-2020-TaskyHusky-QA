@@ -1,14 +1,8 @@
-class SettingsPage {
-    get emailInput() {return $('input[placeholder=Email]')};
-    get continueButton() {return $('button=Continue')};
-    get passwordInput() {return $('input[placeholder=Password][type=password]')};
-    get loginButton() {return $('button=Log in')};
-    //get assigneeCriteria() {return $('span=Assignee')};
-    //get assigneeInput() {return $('input[placeholder="Find by Assignee"]')};
-    //get assigneeCheckbox() {return  $('label="Alesya Afanaseva')};
+class Page {
     get containsInput() {return $('input[placeholder="Contains text"')};
     get searchButton() {return $('button=Search')};
-    get saveAsButton() {return $('button.ui.compact.button.styles_saveBtn__2P-Pe')};
+    get threeDotsButton() {return $('i.ellipsis')};
+    get saveAsButton() {return $('span=Save as')};
     get filterNameInput() {return $('input[placeholder="Enter filter name')};
     get submitButtonForCreation() {return $('i.checkmark.icon')};
     get searchInput() {return $('input[placeholder="Search..."')};
@@ -21,4 +15,4 @@ class SettingsPage {
     get favorite() {return $$('td')[3]};
 };
 
-module.exports = SettingsPage;
+module.exports = Page;

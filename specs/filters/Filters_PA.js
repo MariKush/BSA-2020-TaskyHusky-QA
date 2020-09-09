@@ -1,30 +1,7 @@
-const SettingsPage = require('./Filters_PO');
-//const cretential = require('./credential.json');
-const page = new SettingsPage();
+const Page = require('./Filters_PO');
+const page = new Page();
 
-class SettingsActions {
-    
-    enterEmail(value) {
-        page.emailInput.waitForDisplayed(2000);
-        page.emailInput.clearValue();
-        page.emailInput.setValue(value);
-    }
-
-    clickContinueButton() {
-        page.continueButton.waitForDisplayed(2000);
-        page.continueButton.click();
-    }
-
-    enterPassword(value) {
-        page.passwordInput.waitForDisplayed(2000);
-        page.passwordInput.clearValue();
-        page.passwordInput.setValue(value);
-    }
-
-    clickLoginButton() {
-        page.loginButton.waitForDisplayed(2000);
-        page.loginButton.click();
-    }
+class PageActions {
 
     enterContainsSearch(value) {
         page.containsInput.waitForDisplayed(2000);
@@ -37,25 +14,11 @@ class SettingsActions {
         page.searchButton.click();
     }
 
-    /*enterFindAssignee(value) {
-        page.assigneeInput.waitForDisplayed({timeout: 5000});
-        page.assigneeInput.setValue(value);
-        page.assigneeCheckbox.waitForDisplayed({timeout: 5000});
-        page.assigneeCheckbox.waitForClickable(2000);
-        page.assigneeCheckbox.click();
+    clickThreeDots() {
+        page.threeDotsButton.waitForDisplayed(2000);
+        page.threeDotsButton.click();
     }
 
-      clickAssignee() {
-        page.assigneeCriteria.waitForDisplayed(2000);
-        page.assigneeCriteria.click();
-    }
-
-    clickFindedAssignee() {
-        page.assigneeCheckbox.waitForDisplayed({timeout: 5000});
-        page.assigneeCheckbox.waitForClickable(2000);
-        page.assigneeCheckbox.click();
-    }
-    */
 
     clickSaveAsButton() {
         page.saveAsButton.waitForDisplayed(2000);
@@ -115,4 +78,4 @@ class SettingsActions {
     }
 }
 
-module.exports = SettingsActions;
+module.exports = PageActions;

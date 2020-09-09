@@ -13,7 +13,7 @@ class BoardsPage{
     get projectOurProject () { return $('span=Our Project (ON)')};
     get createButton () { return $('button=Create a board')};
 
-    get boardNameLink () { return $('a=' + data.boardName + '')};
+    get boardNameLink () { return $(`a=' + data.boardName + '`)};
     get threeDotsButton () { return $$('span.dropdown')[2]};
 
     get deleteItem () { return $('span=Delete')};
