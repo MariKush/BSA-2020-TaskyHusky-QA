@@ -27,7 +27,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
-    "chromedriver": "^84.0.1",
+    "chromedriver": "^85",
     "eslint": "^7.5.0",
     "eslint-plugin-wdio": "^6.0.12",
     "prettier": "^2.1.1",

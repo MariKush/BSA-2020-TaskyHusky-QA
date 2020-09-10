@@ -4,3 +4,5 @@ debug.log
 debug.json
 /output/
 /allure-results/
+specs/filters/data.json
+specs/testData.json
